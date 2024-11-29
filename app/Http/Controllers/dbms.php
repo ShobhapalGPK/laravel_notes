@@ -31,6 +31,7 @@ class dbms extends Controller
         $path = 'image';
         $photo->move($path,$photo->getClientOriginalName());
         echo"file data  save";
+        echo"move the photo on the image folder";
     }
 
     // show function
@@ -74,11 +75,12 @@ class dbms extends Controller
          $data->gender=$result->gnd;
          $data->cource=implode(',',$result->get('chk'));
 
-
+               // old photo
          if(empty($photo)){
             $data->update();
             return redirect('dbmsshow');
          }
+          // new photo
          else{
 
          
